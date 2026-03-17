@@ -1,6 +1,7 @@
 📊 Predicción de Riesgo Crediticio — Caso Lending Club
 
 🧠 Contexto del problema
+
 Lending Club es una plataforma financiera que conecta inversionistas con personas que solicitan préstamos.
 Uno de sus principales desafíos es identificar qué clientes tienen alta probabilidad de incumplir sus pagos (default), ya que esto representa pérdidas económicas.
 
