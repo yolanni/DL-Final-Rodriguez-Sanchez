@@ -1,134 +1,63 @@
-Predicción de Riesgo Crediticio — Lending Club
+📊 Predicción de Riesgo Crediticio con Deep Learning
 
 🧠 Problema
-
-El sistema financiero enfrenta el desafío de identificar préstamos con alta probabilidad de incumplimiento (**default**), lo que impacta directamente en la rentabilidad y riesgo de las instituciones.
-
-Este proyecto aborda la predicción de riesgo crediticio utilizando datos reales de préstamos de Lending Club.
-
-
+Las instituciones financieras necesitan identificar qué clientes tienen alta probabilidad de incumplir un préstamo (default), para reducir riesgos y tomar mejores decisiones de crédito.
 
 🎯 Objetivo
-
-Desarrollar un sistema integral que permita:
-
-* Predecir la probabilidad de incumplimiento de un cliente
-* Optimizar decisiones de crédito
-* Explicar las decisiones del modelo (interpretabilidad)
-* Integrar modelos de Machine Learning, Deep Learning y LLMs
-
+Desarrollar un modelo capaz de predecir si un cliente pagará o no su préstamo, utilizando técnicas de Machine Learning y Deep Learning.
 
 📁 Dataset
+Se utilizó el dataset de Lending Club (2007–2018), que contiene información de préstamos reales.
 
-* Fuente: Lending Club (2007–2018)
-* Más de 2 millones de registros
-* Variables financieras, crediticias y de comportamiento
-
-Se filtraron estados relevantes:
-
-* ✅ Fully Paid → 0
-* ❌ Charged Off / Default → 1
-
-
+Se transformó el problema en clasificación binaria:
+0 → Cliente paga (Fully Paid)
+1 → Cliente incumple (Default / Charged Off)
 
 ⚙️ Tecnologías utilizadas
 
-* Python
-* Pandas / NumPy
-* Scikit-learn
-* TensorFlow / Keras
-* LightGBM
-* Optuna
-* InterpretML (EBM)
+Python
+Pandas y NumPy
+Scikit-learn
+TensorFlow / Keras
 
+🤖 Modelos implementados
+🔹 Machine Learning
+Se utilizaron modelos tradicionales para establecer una línea base.
 
-🔬 Modelos implementados
+🔹 Deep Learning (Modelo principal)
+Se implementó una red neuronal tipo MLP (Multi-Layer Perceptron):
 
-📌 Machine Learning
-
-* **EBM (Explainable Boosting Machine)** → modelo interpretable
-* **HistGradientBoosting**
-* **LightGBM**
-
-✔ Se optimizaron hiperparámetros con Optuna
-✔ Se utilizó SMOTETomek para balancear clases
-
----
-
-🧠 Deep Learning
-
-Se implementó una red neuronal tipo **MLP (Multi-Layer Perceptron)**:
-
-* Capas densas con activación ReLU
-* Dropout para evitar overfitting
-* Salida sigmoide para clasificación binaria
-
-El modelo permite capturar relaciones no lineales complejas en los datos.
-
-
-
-🤖 LLM (Large Language Model)
-
-Se integró un pipeline que genera un **payload estructurado** para un modelo de lenguaje (LLM).
-
-¿Qué hace el LLM?
-
-* Recibe la predicción del modelo
-* Usa factores de riesgo explicados por EBM
-* Genera una **carta de decisión crediticia profesional**
-
-✔ Evita alucinaciones (datos estructurados)
-✔ Explica decisiones de forma clara para usuarios
-
-
+Capas densas con activación ReLU
+Dropout para evitar overfitting
+Salida sigmoide para clasificación binaria
+Este modelo permite capturar relaciones complejas en los datos.
 
 📈 Resultados
 
-🔹 Modelos de Machine Learning
+El modelo fue evaluado con las siguientes métricas:
+Accuracy
+F1-score
+ROC-AUC
+Precision y Recall
 
-* ROC-AUC ≈ 0.70
-* F1 (Default) ≈ 0.69
-* Buen balance entre precisión y recall
+📌 Resultado clave:
+El modelo logra un buen equilibrio entre precisión y recall para detectar clientes en riesgo.
 
-🔹 Deep Learning (MLP)
+🧪 Proceso del modelo
+Limpieza y preparación de datos
+Balanceo de clases
+Escalado de variables
+Entrenamiento del modelo MLP
+Evaluación con métricas
 
-* Captura relaciones complejas
-* Comparable con modelos tradicionales
-* Útil para escalabilidad y patrones no lineales
+🚀 Cómo ejecutar el proyecto
 
-📌 Conclusión:
-Los modelos de Machine Learning fueron más interpretables, mientras que Deep Learning aporta flexibilidad y capacidad de generalización.
+Abrir el notebook en Google Colab
+Ejecutar todas las celdas
+Revisar resultados y métricas
 
-
-
-🧩 Pipeline de decisión
-
-El sistema final combina:
-
-1. Reglas de negocio (políticas)
-2. Lógica difusa
-3. Predicción del modelo ML
-4. Explicaciones del modelo (EBM)
-5. Generación de texto con LLM
-
-Resultado: decisión final = APPROVE / REVIEW / DECLINE
-
----
-
-🧪 Casos de prueba
-
-Se evaluaron tres escenarios:
-
-* 🟢 Bajo riesgo → REVIEW
-* 🟡 Riesgo medio → DECLINE
-* 🔴 Alto riesgo → DECLINE (con violaciones de política)
-
-
-📂 Estructura del proyecto
-
-```id="code1"
-notebooks/
- └── proyecto_final.ipynb
-```
-
+💡 Conclusiones
+El modelo permite predecir riesgo crediticio de forma efectiva
+Deep Learning captura patrones complejos en los datos
+Este tipo de solución puede apoyar la toma de decisiones financieras
 
