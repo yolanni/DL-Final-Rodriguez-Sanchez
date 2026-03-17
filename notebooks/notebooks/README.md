@@ -7,10 +7,12 @@ Uno de sus principales desafíos es identificar qué clientes tienen alta probab
 
 
 🎯 Objetivo
+
 Desarrollar un modelo de predicción que permita estimar el riesgo crediticio de un cliente, con el fin de apoyar la toma de decisiones al momento de aprobar o rechazar un préstamo.
 
 
 📁 Dataset
+
 Se utilizó el dataset histórico de préstamos de Lending Club (2007–2018), que contiene información real de clientes.
 
 Se transformó el problema en una clasificación binaria:
@@ -27,6 +29,7 @@ TensorFlow / Keras
 
 
 🤖 Modelo implementado
+
 🧠 Deep Learning (MLP)
 
 Se desarrolló un modelo de red neuronal tipo Multi-Layer Perceptron (MLP):
@@ -46,9 +49,11 @@ Precision y Recall
 
 
 📌 Resultado clave:
+
 El modelo logra identificar de forma efectiva a los clientes con mayor riesgo de incumplimiento, manteniendo un buen equilibrio entre precisión y recall.
 
 🧪 Proceso del modelo
+
 Limpieza y preparación de datos
 Balanceo de clases
 Escalado de variables
